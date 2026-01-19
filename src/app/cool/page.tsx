@@ -7,7 +7,7 @@ export default function Kewl() {
       Feel free to put links, images, whatever! 
       Don't worry about styling- we aren't grading you on this- it's just to get to know you better! :) 
       */}
-      😎😎😎
+      I've been a part of the club Seek Discomfort. We focus on pushing ourselves outside of comfort zones and I've done things ranging from singing with strangers on tech green, polar plunging, running a marathon (no training), and more!
     </div>
   );
 }
