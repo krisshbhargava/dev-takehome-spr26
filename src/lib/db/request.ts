@@ -1,6 +1,6 @@
 // types/itemRequest.ts
 import { ObjectId } from "mongodb";
-import { RequestStatus } from "../request";
+import { RequestStatus } from "../types/request";
 
 export interface ItemRequestDoc {
   _id: ObjectId;
@@ -30,6 +30,15 @@ export interface UpdateStatusInput {
   status: RequestStatus;
 }
 
+export interface BatchUpdateStatusInput {
+  ids: string[];
+  status: RequestStatus;
+}
+
+export interface BatchDeleteInput {
+  ids: string[];
+}
+
 
 export function toItemRequestDto(doc: ItemRequestDoc): ItemRequestDto {
   return {
@@ -54,7 +63,7 @@ export function buildNewItemRequestDoc(
     requestorName: input.requestorName,
     itemRequested: input.itemRequested,
     createdDate: now,
-    lastEditedDate: null,
-    status: "PENDING" as RequestStatus,
+    lastEditedDate: now,
+    status: RequestStatus.PENDING,
   };
 }
