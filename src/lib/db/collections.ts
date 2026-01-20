@@ -1,8 +1,8 @@
 import { getDb } from './mongodb';
 import { Collection } from 'mongodb';
-import { ItemRequest } from '../types/db/request';
+import { ItemRequestDoc } from './request';  // Changed import path and type name
 
-export async function getRequestsCollection(): Promise<Collection<ItemRequest>> {
+export async function getRequestsCollection(): Promise<Collection<ItemRequestDoc>> {
   const db = await getDb();
-  return db.collection<ItemRequest>('requests');
+  return db.collection<ItemRequestDoc>('requests');
 }
